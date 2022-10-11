@@ -17,18 +17,18 @@ class ListItem extends React.Component{
         const{quantity}= this.setState;
 
         return(
-            <View style ={{flexDirection:"row", justifyContent:'space-between', alignItems:'center',backgroundColor:'#ACD1AF'}}>
+            <View style ={{flexDirection:"row", justifyContent:'space-between', alignItems:'center',backgroundColor:'white'}}>
                 <View style={{flexDirection:"row", flex:"1",alignItems:'center'}}>
                 <Image source={require('../assets/korean.jpg')} style={{height:150,width:200,borderRadius:50,marginTop:30}}/>
                     <Text>{item.name}- </Text>
                     
                     <Text>{item.price}</Text>
                 </View>
-                <View style={{flexDirection:"row",flex:"1",alignItems:'center',backgroundColor:"#ACD1AF"}}></View>
+                <View style={{flexDirection:"row",flex:"1",alignItems:'center'}}></View>
                 <Button title="subtract" onPress={this.props.onSubtract}/>
                 <Text>{item.quantity}</Text>
                 <Button title="Add" onPress={this.props.onAdd}/>
-            
+
                
 
             </View>
@@ -65,7 +65,7 @@ class Product extends React.Component{
 
         return(
           
-            <SafeAreaView style={{flex:"1",backgroundColor:"#ACD1AF"}}>
+            <SafeAreaView style={{flex:"1",backgroundColor:"white"}}>
             <FlatList data={this.state.products}
             renderItem={({item, index}) =>(<ListItem item={item}
                 onSubtract={() => this.onSubtract(item, index)}
