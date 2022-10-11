@@ -1,41 +1,35 @@
-
-
-import { View, Text, StyleSheet, TextInput, Button,Image } from 'react-native';
+import { View,Card, Text, StyleSheet, TextInput, Button,Image } from 'react-native';
+import React, {useState} from 'react';
 import Header from '../components/Header'
 
+import {db, auth} from '../components/config/firebase'
+import { addDoc, collection } from 'firebase/firestore';
 
 
-const Home = ({navigation}) => {
+const AddCart = ({navigation}) => {
 
 
 
 
-return(
-    <View style={styles.container}>
 
-<Text style={styles.welcome}>welcome to my restuarant app</Text>
 
-<View style={{flexDirection:"row"}}>
-    <View style={styles.pics}>
-        <Text style={{marginLeft:30}} >Burgers</Text>
-<Image source={require('../assets/shopping.png')} style={{height:100,width:130}} />
-</View>
-<View>
-<Text style={{marginLeft:35}} >Drinks</Text>
-<Image source={require('../assets/drink.jpg')} style={{height:100,width:130, marginLeft:20}} />
 
-</View>
-<View>
-<Text style={{marginLeft:35}} >Dessert</Text>
-<Image source={require('../assets/dess.jpg')} style={{height:100,width:130, marginLeft:20}} />
-</View>
-<View>
-<Text style={{marginLeft:35}} >Appertizer</Text>
-<Image source={require('../assets/appe.jpg')} style={{height:100,width:130, marginLeft:30}} />
-</View>
-</View>
+
+
+
+
+
+
+
+
+    return(
+        <View style={styles.container}>
+
+<Text style={styles.welcome}>ORDER HERE</Text>
+
+
 <View style={{alignItems:"center"}}>
-    <Text style={{textDecorationStyle:"dotted",fontSize:40,color:"orange",textDecorationColor:"blue"}}>Main Course</Text>
+    <Text style={{textDecorationStyle:"dotted",fontSize:40,color:"orange",textDecorationColor:"blue"}}></Text>
     <View style={{flexDirection:"row"}}>
         <View style={styles.cont}>
     <Image source={require('../assets/chic.jpg')} style={{height:150,width:200,borderRadius:50}}/>
@@ -55,20 +49,32 @@ return(
         <View style={styles.cont3}>
     <Image source={require('../assets/korean.jpg')} style={{height:150,width:200,borderRadius:50}}/>
     <Text>Korean</Text>
+
+    <Text>price:R50</Text>
+    <Button title='ADD CART' onPress={() => navigation.navigate('products')} />
+
     </View>
     <View style={styles.cont4}>
     <Image source={require('../assets/steak.jpg')} style={{height:150,width:200,borderRadius:50}}/>
-    <Text>steak</Text>
-    </View>
+    <Text Style={styles.text}>steak</Text>
+    <Text>price:R69</Text>
 
+    <Button title='ADD CART' onPress={() => navigation.navigate('Product')} />
+
+
+    </View>
 
     </View>
 </View>
-    <Button title='Order Now' onPress={() => navigation.navigate('products')}style={{padding:60}} />
+
+          
+            
+    
     </View>
 
 )
-}
+    }
+
 
 
 
@@ -77,18 +83,14 @@ return(
 
 const styles = StyleSheet.create({
     container: {
-       
-        height:1000,
-        backgroundColor:"white",
-        alignItems:"center"
+        width:650,
+        height:700,
+        backgroundColor:'white'
     },
     welcome:{
         fontSize:40,
         marginLeft:70,
-        textTransform:'capitalize',
-        color:"brown",
-        marginBottom:30,
-        textShadowRadius:20
+        textTransform:'capitalize'
     },
     cont:{
         backgroundColor:"#ACD1AF",
@@ -119,8 +121,34 @@ const styles = StyleSheet.create({
         height:200,
         marginLeft:100,
         borderRadius:25
+    },
+    text:{
+        fontSize:30,
+        color:'white',
+        backgroundColor:"blue"
     }
     
 })
 
-export default Home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export default AddCart

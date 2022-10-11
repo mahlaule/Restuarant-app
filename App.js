@@ -6,6 +6,8 @@ import Home from './src/Home'
 import List from './src/List'
 import Register from './src/Register'
 import Login from './src/Login'
+import AddCart from './src/AddCart'
+import Product from './src/products';
 
 
 const Stack = createNativeStackNavigator();
@@ -26,7 +28,12 @@ export default function App() {
 <Stack.Screen name='Home' options={{title:'Home'}}>
           {(props) => <Home {...props} />}
         </Stack.Screen>
-        
+        <Stack.Screen name='AddCart' options={{title:'AddCart'}}>
+          {(props) => <AddCart {...props} />}
+        </Stack.Screen>
+        <Stack.Screen name='products' options={{title:'products'}}>
+          {(props) => <Product {...props} />}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

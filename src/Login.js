@@ -19,7 +19,7 @@ const Login = ({navigation}) => {
 
     useEffect(()=>{
         if (auth.currentUser) {
-            navigation.navigate('Home');
+            navigation.navigate('Register');
         }
     }, [])
 
@@ -65,27 +65,28 @@ const Login = ({navigation}) => {
 
 
   return (
+  
     <View style={styles.container}>
         
    <Image source={require('../assets/log.jpg')} style={{height:200,width:200, marginLeft:15,borderRadius:50}} />
-    <Text style={{color:"#f47174",fontWeight:'bold',fontSize:20}}>LOGIN HERE:</Text>
+    <Text style={{color:"white",fontWeight:'bold',fontSize:20}}>LOGIN HERE:</Text>
         <View>
             {errMsg === '' ? (<Text style={styles.goodErr}></Text>) : (<Text style={styles.badErr}>{errMsg}</Text>)}
         </View>
         <View>
             <View>
                 <Text>Email</Text>
-                <TextInput onChangeText={value => setEmail(value)}style={{backgroundColor:"white",width:200,padding:10}} />
+                <TextInput onChangeText={value => setEmail(value)}style={{backgroundColor:"white",width:200,padding:15, width:350,marginBottom:20}} />
             </View>
 
             <View>
                 <Text>Password:</Text>
-                <TextInput onChangeText={value => setPassword(value)} style={{backgroundColor:"white",width:200,marginBottom:5,padding:10}}/>
+                <TextInput onChangeText={value => setPassword(value)} style={{backgroundColor:"white",width:200,marginBottom:5,padding:15,width:350, marginBottom:20}}/>
             </View>
 
-            <Button title='Login' onPress={loginWithEmail} />
+            <Button title='Login' onPress={loginWithEmail}  />
             <View>
-                <Text>Don't have an account?</Text>
+                <Text style={{marginTop:20}}>Don't have an account?</Text>
                 <Button title='Register' onPress={() => navigation.navigate('Register')} />
             </View>
             <View>
@@ -104,9 +105,9 @@ const Login = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         padding: 15,
-        width:650,
-        height:700,
-        backgroundColor:"#F0FFF0",
+       
+        height:1000,
+        backgroundColor:"#00BFFF",
         alignItems:"center"
     },
     badErr: {

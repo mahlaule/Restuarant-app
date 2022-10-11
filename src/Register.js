@@ -64,7 +64,7 @@ const Register = ({navigation}) => {
         <View>
             <View>
                 <Text>Email</Text>
-                <TextInput onChangeText={value => setEmail(value)} />
+                <TextInput onChangeText={value => setEmail(value)}style={{backgroundColor:"white",width:200,marginBottom:5,padding:10}} />
             </View>
 
             <View>
@@ -92,7 +92,8 @@ const styles = StyleSheet.create({
     container: {
         padding: 15,
         alignItems:"center",
-        backgroundColor:"#F0FFF0",
+        backgroundColor:	"#00BFFF",
+        height:750
     },
     badErr: {
         backgroundColor: '#ff0000',
